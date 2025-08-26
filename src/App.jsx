@@ -83,6 +83,8 @@ function App() {
           </PopConteiner>
         </PopExit>
 
+        {/* 2 */}
+
         {!isAuthPage && <Header user={user} onLogout={handleLogout} />}
 
         <Routes location={background || location}>
