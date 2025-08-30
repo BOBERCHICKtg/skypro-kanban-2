@@ -39,7 +39,6 @@ const PopBrowse = ({ tasks, onClose }) => {
 
   // Функция для получения заглушки токена (обход авторизации)
   const getDummyToken = () => {
-    // Пробуем получить реальный токен из localStorage
     const realToken = localStorage.getItem("userToken");
     if (realToken) return realToken;
     
