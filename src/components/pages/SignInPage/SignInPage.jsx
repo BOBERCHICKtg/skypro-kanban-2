@@ -13,7 +13,7 @@ import {
   ErrorMessage,
 } from "./SignInPage.styles";
 
-const SignInPage = () => {
+const SignInPage = ({ setIsAuth, setUser }) => {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
@@ -32,6 +32,8 @@ const SignInPage = () => {
 
       localStorage.setItem("user", JSON.stringify(userData.user));
       localStorage.setItem("authToken", userData.user.token);
+      setIsAuth(true);          // Устанавливаем статус авторизации
+      setUser(userData.user)
       navigate("/");
     } catch (error) {
       setError(error.message || "Неверный логин или пароль");
